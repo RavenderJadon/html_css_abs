@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABS form</title>
+    <link rel="stylesheet" href="./form.css" />
+  </head>
+  <body>
+    <div class="head">
+      <h1 class="a">ABS Survey</h1>
+      <p>Fields marked with an asterisk (*) are required</p>
+    </div>
+    <div id="result" class="hide"></div>
+    <div id="form-container" class="container">
+      <form id="Form1">
+        <h3>People in Dwelling</h3>
+        <input type="text" placeholder="name" required />
+        <input type="text" placeholder="family name" required />
+        <input type="text" placeholder="gender" required />
+        <input type="text" placeholder="date of birth" required />
+        <input type="text" placeholder="country of birth" required />
+        <input
+          type="text"
+          placeholder="in which year you arrive in australia"
+          required
+        />
+        <input
+          type="text"
+          placeholder="are you an australian citizen"
+          required
+        />
+        <input
+          type="text"
+          placeholder="do you speak a language other than English"
+          required
+        />
+        <input
+          type="text"
+          placeholder="How well do you speak English"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Which is the highest year of secondary school the person has completed"
+          required
+        />
+        <input
+          type="text"
+          placeholder="What is the highest Qualification you have received"
+          required
+        />
+        <input
+          type="text"
+          placeholder="What is the main field of study of your Highest Qualification"
+          required
+        />
+
+        <div class="btn-box">
+          <button type="submit" for="Form1" id="Next1">Next</button>
+        </div>
+      </form>
+
+      <form id="Form2">
+        <h3>The Dwelling</h3>
+        <input type="text" placeholder="type of Dwelling" required />
+        <input type="text" placeholder="Is this Dwelling" required />
+        <input type="text" placeholder="Source of energy" required />
+        <input type="text" placeholder="internet Access" required />
+        <input
+          type="text"
+          placeholder="Average monthly internet download (in GB)"
+          required
+        />
+        <input
+          type="text"
+          placeholder="How many Bedrooms in Dwelling"
+          required
+        />
+        <input
+          type="text"
+          placeholder="are there any electric vehicles garaged at the Dwelling ?"
+          required
+        />
+
+        <div class="btn-box">
+          <button type="button" id="Back1">Back</button>
+          <button type="button" id="Next2">Next</button>
+        </div>
+      </form>
+
+      <form id="Form3">
+        <h3>FeedBack</h3>
+        <input type="text" placeholder="one" required />
+        <input type="text" placeholder="two" required />
+        <input type="text" placeholder="three" required />
+        <input type="text" placeholder="four" required />
+        <input type="text" placeholder="five" required />
+        <input type="text" placeholder="six" required />
+
+        <div class="btn-box">
+          <button type="button" id="Back2">Back</button>
+          <button type="button" id="Submit">Submit</button>
+        </div>
+        <div>document.</div>
+      </form>
+
+      <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>one</small></div>
+        <div class="step-col"><small>two</small></div>
+        <div class="step-col"><small>three</small></div>
+      </div>
+    </div>
+
+    <script>
+      let Form1 = document.getElementById("Form1");
+      let Form2 = document.getElementById("Form2");
+      let Form3 = document.getElementById("Form3");
+
+      let Next1 = document.getElementById("Next1");
+      let Next2 = document.getElementById("Next2");
+      let Back1 = document.getElementById("Back1");
+      let Back2 = document.getElementById("Back2");
+      let progress = document.getElementById("progress");
+      let Submit = document.getElementById("Submit");
+      const result =document.getElementById('result')
+      const formContainer =document.getElementById('form-container')
+
+      const error = [];
+
+      document.querySelectorAll("input").forEach((field) => {
+        field.addEventListener("change", (e) => {
+          field.classList.add("touched");
+          field.removeEventListener("change", (e) => console.log("removed"));
+        });
+      });
+
+      Next1.onclick = function (e) {
+        // if (!Form1.checkValidity()) {
+        //   document.querySelectorAll("#Form1 input").forEach((field) => {
+        //     if (!field.classList.contains('touched')) {
+        //       field.classList.add("touched");
+        //     }
+        //   });
+        //   return;
+        // }
+        e.preventDefault();
+        Form1.style.left = "-450px";
+        Form2.style.left = "40px";
+        progress.style.width = "240px";
+      };
+      Back1.onclick = function () {
+        Form1.style.left = "40px";
+        Form2.style.left = "450px";
+        progress.style.width = "120px";
+      };
+      Next2.onclick = function () {
+        Form2.style.left = "-450px";
+        Form3.style.left = "40px";
+        progress.style.width = "360px";
+      };
+      Back2.onclick = function () {
+        Form2.style.left = "40px";
+        Form3.style.left = "450px";
+        progress.style.width = "240px";
+      };
+
+      Submit.onclick = function () {
+        result.innerHTML = ("<h1>hii</h1>");
+        result.classList.replace('hide', 'fade-in')
+
+        formContainer.classList.add('hide');
+
+
+      };
+    </script>
+  </body>
+</html>
