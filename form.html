@@ -8,48 +8,122 @@
   </head>
   <body>
     <div class="head">
-      <h1 class="a">ABS Survey</h1>
-      <p>Fields marked with an asterisk (*) are required</p>
+      <img class="abs-logo" src="./images/abs-logo.png" alt="abs-logo" />
+      <div class="head">
+        <h1 class="a">ABS Survey</h1>
+        <p>Fields marked with an asterisk (*) are required</p>
+      </div>
     </div>
     <div id="result" class="hide"></div>
     <div id="form-container" class="container">
       <form id="Form1">
         <h3>People in Dwelling</h3>
+        <p>Name *</p>
         <input type="text" placeholder="name" required />
+        <p>Family Name *</p>
         <input type="text" placeholder="family name" required />
-        <input type="text" placeholder="gender" required />
-        <input type="text" placeholder="date of birth" required />
-        <input type="text" placeholder="country of birth" required />
+
+        <p>Gender *</p>
+        <input class="radio-btn" type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input class="radio-btn" type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+      </br>
+        <p>Date of Birth *</p>
+        <input type="date" name="" required/>
+
+        <!-- <p>Country of Birth *</p> -->
+        <label for="Country of Birth" required>Country of Birth *<br/></label>
+        <select name="country" id="country" required>
+        <option value="Australia">Australia</option>
+        <option value="New Zealand">New Zealand</option>
+        <option value="Fiji"> Fiji</option>
+        <option value="Solomon Island">Solomon Island</option>
+        <option value="Papua New Guinea">Papua New Guinea</option>
+        <option value="Philippines">Philippines</option>
+        </select></br>
+
+        <label for="In which year you arrive in Australia">In which year you arrive in Australia *<br/></label>
+        <select name="year" id="year" required>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          <option value="2008">2008</option>
+          <option value="2007">2007</option>
+          <option value="2006">2006</option>
+          <option value="2005">2005</option>
+
+        </select><br/>
+
+
+        <!-- <p>In which year you arrive in Australia *<br/></p>
         <input
-          type="text"
+          type="number"
           placeholder="in which year you arrive in australia"
           required
-        />
-        <input
-          type="text"
-          placeholder="are you an australian citizen"
-          required
-        />
-        <input
-          type="text"
-          placeholder="do you speak a language other than English"
-          required
-        />
-        <input
-          type="text"
-          placeholder="How well do you speak English"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Which is the highest year of secondary school the person has completed"
-          required
-        />
-        <input
-          type="text"
-          placeholder="What is the highest Qualification you have received"
-          required
-        />
+        /> -->
+
+        <label for="Are you an Australian citizen ? *">Are you an Australian citizen ? *<br/></label>
+        <select name="citizen" id="citizen">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        </select></br>
+
+        <label for="Do you speak a language other than English? *">Do you speak a language other than English? *<br/></label>
+        <select name="language" id="language">
+        <option value="englishOnly">English Only</option>
+        <option value="mandarin">Mandarin</option>
+        <option value="italian">Italian</option>
+        <option value="arabic">Arabic</option>
+        <option value="cantonese">Cantonese</option>
+        <option value="Greek">Greek</option>
+        </select></br>
+
+
+        <label for="How well do you speak English? *">How well do you speak English? *<br/></label>
+        <select name="englishSkills" id="englishSkills">
+        <option value="veryWell">Very well</option>
+        <option value="well">Well</option>
+        <option value="notWell">Not well</option>
+        <option value="NotAtAll">Not at all</option>
+        </select><br/>
+
+        <label for="Which is the highest year of secondary school the person has
+        completed? *">Which is the highest year of secondary school the person has
+        </br> completed? *<br/></label>
+        <select name="secondarySchool" id="secondarySchool">
+        <option value="year7">Year 7</option>
+        <option value="year8">Year 8</option>
+        <option value="year9">Year 9</option>
+        <option value="year10">year 10</option>
+        <option value="year11">year 11</option>
+        <option value="year12">year 12</option>
+        </select></br>
+
+        <label for="What is the highest Qualification you have received? *">What is the highest Qualification you have received? *<br/></label>
+        <select name="higherQualification" id="higherQualification">
+        <option value="tradeCertificate">Trade Certificate</option>
+        <option value="cert1">Cert 1</option>
+        <option value="cert2">Cert 2</option>
+        <option value="cert3">Cert 3</option>
+        <option value="cert4">Cert 4</option>
+        <option value="bachelorDegree">Bachelor Degree</option>
+        <option value="associateDiploma">Associate Diploma</option>
+        <option value="diploma">Diploma</option>
+        <option value="masters">Masters</option>
+        <option value="PhD">Phd</option>
+        </select></br>
+
+        <p>What is the main field of study of your Highest Qualification? *</p>
         <input
           type="text"
           placeholder="What is the main field of study of your Highest Qualification"
@@ -62,21 +136,62 @@
       </form>
 
       <form id="Form2">
+
         <h3>The Dwelling</h3>
-        <input type="text" placeholder="type of Dwelling" required />
-        <input type="text" placeholder="Is this Dwelling" required />
-        <input type="text" placeholder="Source of energy" required />
-        <input type="text" placeholder="internet Access" required />
+
+        <label for="Type of Dwelling" required>Type of Dwelling *<br/></label>
+        <select name="Type of Dwelling" id="typeofDwelling" required>
+        <option value="Detached House">Detached House</option>
+        <option value="Semi-Detached House">Semi-Detached House</option>
+        <option value="Apartment"> Apartment</option>
+        <option value="Retirement village">Retirement village</option>
+        <option value="Caravan">Caravan</option>
+        <option value="Houseboat">Houseboat</option>
+        <option value="Boat">Boat</option>
+        <option value="Tent">Tent</option>
+        </select></br>
+
+        <label for="Is this Dwelling" required>Is this Dwelling *<br/></label>
+        <select name="Is this Dwelling" id="isThisDwelling"" required>
+        <option value="Owned outright">Owned outright</option>
+        <option value="Owned with Mortgage">Owned with Mortgage</option>
+        <option value="Rented">Rented</option>
+        <option value="Rent-free">Rent-free</option>
+        </select></br>
+
+        <label for="Source of energy for the Dwelling" required>Source of energy for the Dwelling *<br/></label>
+        <select name="Source of energy for the Dwelling" id="sourceOfenergy" required>
+        <option value="mainsElectricity">Mains Electricity</option>
+        <option value="Photovoltaic Panels">Photovoltaic Panels</option>
+        <option value="Battery">Battery</option>
+        <option value="Gas">Gas</option>
+        <option value="No power source">No power source</option>
+        </select></br>
+
+        <label for="internet Access for the Dwelling" required>internet Access for the Dwelling *<br/></label>
+        <select name="internet Access for the Dwelling" id="internetAccess" required>
+        <option value="Fiber to the House">Fiber to the House</option>
+        <option value="Fiber to the curb">Fiber to the curb</option>
+        <option value="Fiber to the node">Fiber to the node</option>
+        <option value="Fixed Wireless">Fixed Wireless</option>
+        <option value="ADSL">ADSL</option>
+        <option value="Mobile Broadband">Mobile Broadband</option>
+        <option value="No Internet">No Internet</option>
+        </select></br>
+
+        <p>Average monthly internet download (in GB) *</p>
         <input
-          type="text"
+          type="number"
           placeholder="Average monthly internet download (in GB)"
           required
         />
+        <p>How many Bedrooms in Dwelling6 *</p>
         <input
           type="text"
           placeholder="How many Bedrooms in Dwelling"
           required
         />
+        <p>Are there any electric vehicles garaged at the Dwelling ? *</p>
         <input
           type="text"
           placeholder="are there any electric vehicles garaged at the Dwelling ?"
@@ -91,25 +206,31 @@
 
       <form id="Form3">
         <h3>FeedBack</h3>
+        <p>que 1 *</p>
         <input type="text" placeholder="one" required />
+        <p>que 2 *</p>
         <input type="text" placeholder="two" required />
+        <p>que 3 *</p>
         <input type="text" placeholder="three" required />
+        <p>que 4 *</p>
         <input type="text" placeholder="four" required />
+        <p>que 5 *</p>
         <input type="text" placeholder="five" required />
+        <p>que 6 *</p>
         <input type="text" placeholder="six" required />
 
         <div class="btn-box">
           <button type="button" id="Back2">Back</button>
           <button type="button" id="Submit">Submit</button>
         </div>
-        <div>document.</div>
       </form>
-    
+
       <div class="step-row">
         <div id="progress"></div>
-        <div class="step-col"><small>one</small></div>
-        <div class="step-col"><small>two</small></div>
-        <div class="step-col"><small>three</small></div>
+        <div class="step-col"><small>Form 1</small></div>
+        <div class="step-col"><small>Form 2</small></div>
+        <div class="step-col"><small>Form 3</small></div>
+        <div class="step-col"><small>Completed</small></div>
       </div>
     </div>
 
@@ -124,8 +245,8 @@
       let Back2 = document.getElementById("Back2");
       let progress = document.getElementById("progress");
       let Submit = document.getElementById("Submit");
-      const result =document.getElementById('result')
-      const formContainer =document.getElementById('form-container')
+      const result = document.getElementById("result");
+      const formContainer = document.getElementById("form-container");
 
       const error = [];
 
@@ -137,42 +258,59 @@
       });
 
       Next1.onclick = function (e) {
-        // if (!Form1.checkValidity()) {
-        //   document.querySelectorAll("#Form1 input").forEach((field) => {
-        //     if (!field.classList.contains('touched')) {
-        //       field.classList.add("touched");
-        //     }
-        //   });
-        //   return;
-        // }
+        if (!Form1.checkValidity()) {
+          document.querySelectorAll("#Form1 input").forEach((field) => {
+            if (!field.classList.contains("touched")) {
+              field.classList.add("touched");
+            }
+          });
+          return;
+        }
         e.preventDefault();
-        Form1.style.left = "-450px";
-        Form2.style.left = "40px";
-        progress.style.width = "240px";
+        Form1.style.left = "-1000px";
+        Form2.style.left = "130px";
+        progress.style.width = "400px";
       };
       Back1.onclick = function () {
-        Form1.style.left = "40px";
-        Form2.style.left = "450px";
-        progress.style.width = "120px";
+        Form1.style.left = "150px";
+        Form2.style.left = "1000px";
+        progress.style.width = "200px";
       };
-      Next2.onclick = function () {
-        Form2.style.left = "-450px";
-        Form3.style.left = "40px";
-        progress.style.width = "360px";
+      Next2.onclick = function (e) {
+        if (!Form2.checkValidity()) {
+          document.querySelectorAll("#Form2 input").forEach((field) => {
+            if (!field.classList.contains("touched")) {
+              field.classList.add("touched");
+            }
+          });
+          return;
+        }
+        // e.preventDefault();
+        Form2.style.left = "-1000px";
+        Form3.style.left = "130px";
+        progress.style.width = "600px";
       };
       Back2.onclick = function () {
-        Form2.style.left = "40px";
-        Form3.style.left = "450px";
-        progress.style.width = "240px";
+        Form2.style.left = "150px";
+        Form3.style.left = "1000px";
+        progress.style.width = "400px";
       };
 
-      Submit.onclick = function () {
-        result.innerHTML = ("<h1>hii</h1>");
-        result.classList.replace('hide', 'fade-in')
+      Submit.onclick = function (e) {
+        if (!Form3.checkValidity()) {
+          document.querySelectorAll("#Form3 input").forEach((field) => {
+            if (!field.classList.contains("touched")) {
+              field.classList.add("touched");
+            }
+          });
+          return;
+        }
+        // e.preventDefault();
+        progress.style.width = "400px";
+        result.innerHTML = "<h1>hii</h1>";
+        result.classList.replace("hide", "fade-in");
 
-        formContainer.classList.add('hide');
-
-
+        formContainer.classList.add("hide");
       };
     </script>
   </body>
