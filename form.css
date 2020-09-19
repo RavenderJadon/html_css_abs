@@ -11,6 +11,10 @@ body {
 }
 .head {
   text-align: center;
+  margin-top: 5px;
+}
+.head1 {
+  text-align: center;
   margin-top: 30px;
   box-shadow: 0 0 0 #000, -2px -2px 2px rgb(0,0,0,.4);
 }
@@ -78,6 +82,9 @@ form button {
   left: 900px;
 }
 #Form3 {
+  left: 900px;
+}
+#Form4{
   left: 900px;
 }
 .step-row {
