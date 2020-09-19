@@ -19,9 +19,9 @@
      <form id="Form1">
       <h3>Address of the Dwelling</h3>
       <p>Apartment number *</p>
-      <input type="text" placeholder="Apartment number" required />
+      <input type="text" placeholder="Apartment number" id="apartmentNumber" required />
       <p>Street number *</p>
-      <input type="text" placeholder="Street number" required />
+      <input type="text" placeholder="Street number" id="StreetNumber" required />
       <p>Street *</p>
       <input type="text" placeholder="Street" required />
       <p>Suburb/City *</p>
@@ -38,6 +38,12 @@
 
     <form id="Form2">
       <h3>People in Dwelling</h3>
+      <p>How many people spent the census night at the Dwelling? *</p>
+      <input
+        type="number"
+        placeholder="Number of person"
+        required
+      />
       <p>Name *</p>
       <input type="text" placeholder="name" required />
       <p>Family Name *</p>
@@ -326,6 +332,8 @@
     let Submit = document.getElementById("Submit");
     const result = document.getElementById("result");
     const formContainer = document.getElementById("form-container");
+    const apartmentNumber = document.getElementById("apartmentNumber");
+
 
     const error = [];
 
@@ -335,8 +343,9 @@
         field.removeEventListener("change", (e) => console.log("removed"));
       });
     });
-
     Next1.onclick = function (e) {
+    let firstPageData = [apartmentNumber.value,StreetNumber.value];
+      let aprtNo = apartmentNumber.value;
       if (!Form1.checkValidity()) {
         document.querySelectorAll("#Form1 input").forEach((field) => {
           if (!field.classList.contains("touched")) {
@@ -349,6 +358,9 @@
       Form1.style.left = "-1000px";
       Form2.style.left = "130px";
       progress.style.width = "400px";
+
+      console.log(aprtNo,"qwe");
+            console.log(firstPageData);
     };
     Back1.onclick = function () {
       Form1.style.left = "150px";
@@ -410,6 +422,9 @@
       result.classList.replace("hide", "fade-in");
 
       formContainer.classList.add("hide");
+
+      console.log(aprtNo,"qwe");
+            console.log(firstPageData);
     };
   </script>
 
